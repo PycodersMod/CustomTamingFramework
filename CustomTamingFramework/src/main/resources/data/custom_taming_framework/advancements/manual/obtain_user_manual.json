@@ -1,0 +1,7 @@
+{
+  "criteria": {
+    "obtain_user_manual": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

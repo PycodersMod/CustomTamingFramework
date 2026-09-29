@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "custom_taming_framework:user_manual"
+    },
+    "title": {
+      "translate": "advancement.custom_taming_framework.obtain_user_manual.title"
+    },
+    "description": {
+      "translate": "advancement.custom_taming_framework.obtain_user_manual.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "recipes": [
+      "custom_taming_framework:taming_core"
+    ]
+  },
+  "criteria": {
+    "obtain_user_manual": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

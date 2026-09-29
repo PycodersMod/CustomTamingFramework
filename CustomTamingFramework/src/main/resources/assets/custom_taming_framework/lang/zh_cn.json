@@ -1,0 +1,11 @@
+{
+  "mod.custom_taming_framework": "自定义驯兽框架",
+  "item.custom_taming_framework.taming_core": "驯兽核心",
+  "item.custom_taming_framework.user_manual": "CTF用户手册",
+  "item.custom_taming_framework.admin_manual": "CTF管理员手册",
+  "advancement.custom_taming_framework.obtain_user_manual.title": "？！驯兽？！",
+  "advancement.custom_taming_framework.obtain_user_manual.description": "第一次获得 CTF 用户手册时触发。",
+  "key.categories.custom_taming_framework": "自定义驯兽框架",
+  "key.custom_taming_framework.open_pet_gui": "打开准心宠物界面",
+  "key.custom_taming_framework.cycle_pet_permission": "切换宠物驯兽权限"
+}

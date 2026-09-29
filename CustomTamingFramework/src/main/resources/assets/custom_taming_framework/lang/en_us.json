@@ -1,0 +1,11 @@
+{
+  "mod.custom_taming_framework": "Custom Taming Framework",
+  "item.custom_taming_framework.taming_core": "Taming Core",
+  "item.custom_taming_framework.user_manual": "CTF User Manual",
+  "item.custom_taming_framework.admin_manual": "CTF Admin Manual",
+  "advancement.custom_taming_framework.obtain_user_manual.title": "Taming?!",
+  "advancement.custom_taming_framework.obtain_user_manual.description": "Triggered the first time you obtain the CTF User Manual.",
+  "key.categories.custom_taming_framework": "Custom Taming Framework",
+  "key.custom_taming_framework.open_pet_gui": "Open Target Pet Screen",
+  "key.custom_taming_framework.cycle_pet_permission": "Cycle Pet Access"
+}
