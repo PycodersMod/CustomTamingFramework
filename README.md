@@ -786,3 +786,9 @@ v0.1.0-alpha 是 Custom Taming Framework 的第一个可游玩测试版本。它
 这个 alpha 版本重点验证主要系统能否串联工作。它提供了一个小型但可运行的闭环：启用支持的生物，保存它的自定义宠物状态，通过食物或测试物品与它互动，并查看它当前的自定义成长进度。
 
 这个版本主要用于测试行为和收集反馈，之后再把框架扩展为更完整的自定义系统。
+
+## License
+
+本项目采用 MIT License，详见 [LICENSE](./LICENSE)。
+
+本仓库的 Gradle Wrapper 保留其随附的 Apache-2.0 许可，详见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
