@@ -1,3 +1,6 @@
+import java.nio.charset.StandardCharsets
+import java.util.Base64
+
 plugins {
     eclipse
     idea
@@ -6,7 +9,7 @@ plugins {
 }
 
 version = "0.1.5-alpha"
-group = "com.example.customtamingframework"
+group = "com.pycoder.customtamingframework"
 
 base {
     archivesName.set("custom_taming_framework")
@@ -15,6 +18,16 @@ base {
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 }
+
+val pycodersRunDir = file(
+    providers.gradleProperty("pycodersRuntimeDir")
+        .orElse("../../runtime/legacy-import/CustomTamingFramework/run")
+        .get()
+)
+fun decodeArgs(name: String): List<String> = providers.gradleProperty(name).orNull?.takeIf { it.isNotEmpty() }?.split('.')?.map { if (it == "_") "" else String(Base64.getDecoder().decode(it), StandardCharsets.UTF_8) } ?: emptyList()
+val pycodersGameArgs = decodeArgs("pycodersGameArgsB64")
+val pycodersJavaArgs = decodeArgs("pycodersJavaArgsB64")
+val pycodersUsername = providers.gradleProperty("pycodersUsername").orElse("Dev").get()
 
 repositories {
     maven("https://maven.minecraftforge.net/")
@@ -29,7 +42,8 @@ minecraft {
 
     runs {
         configureEach {
-            workingDirectory(project.file("run"))
+            workingDirectory(pycodersRunDir)
+            pycodersJavaArgs.forEach { jvmArg(it) }
             property("forge.logging.markers", "REGISTRIES")
             property("forge.logging.console.level", "debug")
 
@@ -41,15 +55,18 @@ minecraft {
         }
 
         create("client") {
-            workingDirectory(file("../../runtime/legacy-import/CustomTamingFramework/run"))
-            args("--username", ctfUsernameProvider.get())
+            workingDirectory(pycodersRunDir)
+            args("--username", pycodersUsername)
+            pycodersGameArgs.forEach { args(it) }
         }
         create("server") {
+            workingDirectory(pycodersRunDir)
             args("--nogui")
+            pycodersGameArgs.forEach { args(it) }
         }
         create("gameTestServer")
         create("data") {
-            workingDirectory(project.file("run-data"))
+            workingDirectory(pycodersRunDir)
             args(
                 "--mod", "custom_taming_framework",
                 "--all",
