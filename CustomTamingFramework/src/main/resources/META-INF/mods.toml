@@ -7,6 +7,7 @@ issueTrackerURL=""
 modId="custom_taming_framework"
 version="${file.jarVersion}"
 displayName="Custom Taming Framework"
+logoFile="logo.png"
 authors="Pycoder"
 description='''
 自定义驯兽框架
